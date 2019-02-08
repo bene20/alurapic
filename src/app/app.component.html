@@ -1,3 +1,4 @@
-<ap-photo url="https://osegredo.com.br/wp-content/uploads/2018/07/signo-de-leao-830x450.jpg" description="Leão 1"></ap-photo>
-<ap-photo url="https://statig1.akamaized.net/bancodeimagens/7k/26/1s/7k261s08f31s2yk4y38m33y0k.jpg" description="Leão 2"></ap-photo>
-
+<ap-photo *ngFor="let photo of photos"
+    [url]="photo.url"
+    [description]="photo.description">
+</ap-photo>
