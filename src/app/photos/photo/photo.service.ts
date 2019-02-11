@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { Photo } from './photo.model';
 
-const API : string = 'http://localhost:3000/';
+const API : string = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class PhotoService {
 
   public listFromUser(userName: string): Observable<Photo[]> {
     return this.http
-      .get<Photo[]>(API + userName + '/photos');
+      .get<Photo[]>(API + '/' + userName + '/photos');
   }
 
 }
