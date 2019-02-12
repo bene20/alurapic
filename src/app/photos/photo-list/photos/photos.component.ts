@@ -15,7 +15,7 @@ export class PhotosComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    //Se houve mudanças no inboundProperty 'photos', então executo o groupColumns novamente
+    //Se houve mudanças no inbound property 'photos', então executo o groupColumns novamente
     if (changes.photos) {
       this.rows = this.groupColumns(this.photos);
     }
