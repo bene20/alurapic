@@ -1,4 +1,4 @@
-<ap-search (typing)="filter = $event"></ap-search>
+<ap-search (typing)="filter = $event" [value]="filter"></ap-search>
 
 <ap-photos [photos]="photos | filterByDescription: filter "></ap-photos>
 

@@ -26,8 +26,11 @@ export class PhotoListComponent implements OnInit {
     }
 
     load() {
-      this.photoService.listFromUserPaginated(this.userName, ++this.currentPage)
+      this.photoService
+        .listFromUserPaginated(this.userName, ++this.currentPage)
         .subscribe(photos => {
+          this.filter = '';
+
           //A linha abaixo utiliza a técnica de desctructuring, e é equivalente
           //a this.photos.push(photos[0], photos[1], photos[1], photos[1]);
           //this.photos.push(...photos);
