@@ -35,6 +35,7 @@ export class SigninComponent implements OnInit {
         err => {
           alert('Invalid user name or password');
           this.loginForm.reset();
+
           //Só executo a instrução de aplicar o foco no campo input (acessando
           //diretamente o elemento do DOM) se estiver utilizando a renderização
           //no browser (pois se fosse renderização server-side geraria erro)
