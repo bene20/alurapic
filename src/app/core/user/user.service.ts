@@ -32,6 +32,8 @@ export class UserService {
 
   private decodeAndNotify() {
     const token = this.tokenService.getToken();
+    //console.log("Token JWT recebido: " + token);
+
     const user = jwt_decode(token) as User; // 'as' aqui está fazendo um casting,
                                             // pois tenho certeza que o conteúdo do Token é um tipo 'User'
     this.userSubject.next(user);
