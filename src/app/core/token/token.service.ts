@@ -8,8 +8,8 @@ export class TokenService {
 
   constructor() { }
 
-  hasToken() {
-    return !!this.getToken(); //!! é um truque para converter string em booleano
+  hasToken(): boolean {
+    return !!this.getToken(); // !! é um truque para converter string em booleano
   }
 
   setToken(token) {

@@ -34,6 +34,7 @@ export class SigninComponent implements OnInit {
         () => this.router.navigate(['user', userName]),
         err => {
           alert('Invalid user name or password');
+          console.log("Erro: " + err);
           this.loginForm.reset();
 
           //Só executo a instrução de aplicar o foco no campo input (acessando
