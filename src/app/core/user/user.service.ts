@@ -10,6 +10,7 @@ import * as jwt_decode from 'jwt-decode';
 export class UserService {
 
   private userSubject: BehaviorSubject<User> = new BehaviorSubject<User>(null);
+  private userName: string;
 
   constructor(private tokenService: TokenService) {
     // Preciso acionar manualmente o decodeAndNotify() no
@@ -36,11 +37,20 @@ export class UserService {
 
     const user = jwt_decode(token) as User; // 'as' aqui está fazendo um casting,
                                             // pois tenho certeza que o conteúdo do Token é um tipo 'User'
+    this.userName = user.name;
     this.userSubject.next(user);
   }
 
   logout() {
     this.tokenService.removeToken();
     this.userSubject.next(null);
+  }
+
+  isLogged() {
+    return this.tokenService.hasToken();
+  }
+
+  getUserName() {
+    return this.userName;
   }
 }
