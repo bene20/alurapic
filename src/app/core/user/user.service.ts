@@ -38,4 +38,9 @@ export class UserService {
                                             // pois tenho certeza que o conteúdo do Token é um tipo 'User'
     this.userSubject.next(user);
   }
+
+  logout() {
+    this.tokenService.removeToken();
+    this.userSubject.next(null);
+  }
 }
